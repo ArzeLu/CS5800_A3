@@ -1,0 +1,52 @@
+@startuml
+class Employee{
+    protected String firstName;
+    protected String lastName;
+    protected String socialSecurityNumber;
+
+    public Employee(String firstName, String lastName, String socialSecurityNumber)
+    public void setFirstName(String firstName)
+    public void setLastName(String firstName)
+    public void setSocialSecurityNumber(String socialSecurityNumber)
+    public String getFirstName()
+    public String getLastName()
+    public String getSocialSecurityNumber()
+}
+
+class BaseEmployee extends Employee{
+    private float baseSalary;
+
+    public BaseEmployee(String firstName, String lastName, String socialSecurityNumber, float baseSalary)
+    public void setBaseSalary(float baseSalary)
+    public float getBaseSalary()
+}
+
+class CommissionEmployee extends Employee{
+    private double commissionRate;
+    private double grossSales;
+
+    public CommissionEmployee(String firstName, String lastName, String socialSecurityNumber, double commissionRate, double grossSales)
+    public void setCommissionRate(float commissionRate)
+    public void setGrossSales(float commissionRate)
+    public double getCommissionRate()
+    public double getGrossSales()
+}
+
+class HourlyEmployee extends Employee{
+    private float wage;
+    private float hoursWorked;
+
+    public HourlyEmployee(String firstName, String lastName, String socialSecurityNumber, float wage, float hoursWorked)
+    public void setWage(float wage)
+    public void setHoursWorked(float hoursWorked)
+    public float getWage()
+    public float getHoursWorked()
+}
+
+class SalariedEmployee extends Employee{
+    private float weeklySalary;
+    public SalariedEmployee(String firstName, String lastName, String socialSecurityNumber, float weeklySalary)
+    public void setWeeklySalary(float weeklySalary)
+    public float getWeeklySalary(float weeklySalary)
+}
+@enduml

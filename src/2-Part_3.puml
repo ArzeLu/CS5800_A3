@@ -1,0 +1,20 @@
+@startuml
+
+object "<u>instructor : Instructor</u>" as instructor{
+    private String firstName: "Gio"
+    private String lastName: "Marroquin"
+    private int officeNumber: 603
+}
+
+object "<u>textbook : Textbook</u>" as textbook{
+    private String title: "ESD Handbook"
+    private String author: "Edwin Barillas"
+    private String publisher: "Axiomtek"
+}
+
+map "<u>course : Course</u>" as course{
+    private Instructor instructor *-> instructor
+    private Textbook textbook *-> textbook
+}
+
+@enduml

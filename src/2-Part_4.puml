@@ -1,0 +1,85 @@
+@startuml
+
+object "<u>.htaccess : File</u>" as htaccess
+
+object "<u>.htrouter.php : File</u>" as htrouter_php
+
+object "<u>index.html : File</u>" as index_html
+
+object "<u>Remote Files : File</u>" as remoteFiles
+
+object "<u>Include Path : Folder</u>" as includePath{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>.phalcon : Folder</u>" as phalcon{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>config : Folder</u>" as config{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>controllers : Folder</u>" as controllers{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>library : Folder</u>" as library{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>migrations : Folder</u>" as migrations{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>models : Folder</u>" as models{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>views : Folder</u>" as views{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>cache : Folder</u>" as cache{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+object "<u>public : Folder</u>" as public{
+    private ArrayList<Folder> folders
+    private ArrayList<File> files
+}
+
+map "<u>app : Folder</u>" as app{
+    private ArrayList<Folder> folders *-> config
+    private ArrayList<Folder> folders *-> controllers
+    private ArrayList<Folder> folders *-> library
+    private ArrayList<Folder> folders *-> migrations
+    private ArrayList<Folder> folders *-> models
+    private ArrayList<Folder> folders *-> views
+}
+
+map "<u>Source Files : Folder</u>" as sourceFiles{
+    private ArrayList<Folder> folders *-> phalcon
+    private ArrayList<Folder> folders *-> app
+    private ArrayList<Folder> folders *-> cache
+    private ArrayList<Folder> folders *-> public
+    private ArrayList<File> files *-> htaccess
+    private ArrayList<File> files *-> htrouter_php
+    private ArrayList<File> files *-> index_html
+}
+
+map "<u>php_demo1 : Folder</u>" as php_demo1{
+    private ArrayList<Folder> folders *-> sourceFiles
+    private ArrayList<Folder> folders *-> includePath
+    private ArrayList<Folder> folders *-> remoteFiles
+}
+@enduml

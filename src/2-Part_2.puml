@@ -1,0 +1,26 @@
+@startuml
+
+object "<u>ship : Ship</u>" as ship{
+    protected String ship: "Ship A"
+    protected String manufactureYear: "1995"
+}
+
+object "<u>cruiseShip : CruiseShip</u>" as cruiseShip{
+    protected String ship: "Ship B"
+    protected String manufactureYear: "1984"
+    private int maximumPassengers: 532
+}
+
+object "<u>cargoShip : CargoShip</u>" as cargoShip{
+    protected String ship: "Ship C"
+    protected String manufactureYear: "2011"
+    private int cargoCapacity: 374
+}
+
+map "<u>ships : Ship</u>" as ships{
+    1 *-> ship
+    2 *-> cargoShip
+    3 *-> cruiseShip
+}
+
+@enduml

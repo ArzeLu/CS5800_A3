@@ -1,0 +1,39 @@
+@startuml
+
+class Instructor{
+    private String firstName;
+    private String lastName;
+    private int officeNumber;
+
+    public void setFirstName(String firstName)
+    public void setLastName(String lastName)
+    public void setOfficeNumber(int officeNumber)
+    public String getFirstName()
+    public String getLastName()
+    public int getOfficeNumber()
+}
+
+class Textbook{
+    private String title;
+    private String author;
+    private String publisher;
+
+    public void setTitle(String title)
+    public void setAuthor(String author)
+    public void setPublisher(String publisher)
+    public String getTitle()
+    public String getAuthor()
+    public String getPublisher()
+}
+
+
+class Course{
+    private Instructor[] instructor;
+    private Textbook[] textbook;
+    private String name;
+
+    public void printInfo()
+    public static void main(String[] args)
+}
+
+@enduml

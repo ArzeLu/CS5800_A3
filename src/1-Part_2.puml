@@ -1,0 +1,32 @@
+@startuml
+
+class Ship{
+    protected String ship;
+    protected String manufactureYear;
+
+    public Ship(String ship, String manufactureYear)
+    public void setShipName(String ship)
+    public void setManufactureYear(String manufactureYear)
+    public String getShipName()
+    public String getManufactureYear()
+    public void printInfo()
+}
+
+class CargoShip extends Ship{
+    private int cargoCapacity;
+
+    public CargoShip(String ship, String manufactureYear, int cargoCapacity)
+    public void setCargoCapacity(int cargoCapacity)
+    public int getCargoCapacity()
+    public void printInfo()
+}
+
+class CruiseShip extends Ship{
+    private int maximumPassengers;
+
+    public CruiseShip(String ship, String manufactureYear, int maximumPassengers)
+    public void setMaximumPassengers(int maximumPassengers)
+    public int getMaximumPassengers()
+    public void printInfo()
+}
+@enduml
